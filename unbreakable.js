@@ -1,23 +1,25 @@
-function split(str, str2) {
+function split(str, elem) {
     let arr = [];
-    let last = 0;
-    for (let i = 0; i < str.length; i++) {
-        if (str.slice(i, i + str2.length) === str2) {
-            arr.push(str.slice(last, i));
-            last = i + str2.length;
+    for (let i = 0; i < str.length - elem.length + 1; i++) {
+        if (str.slice(i, i + elem.length) === elem) {
+            arr.push(str.slice(0, i));
+            str = str.slice(i + elem.length);
+            i = 0
         }
     }
-    arr.push(str.slice(last));
+    arr.push(str);
     return arr;
 }
 
-function join(arr, char) {
+function join(arr, elem) {
     let str = "";
     for (let i = 0; i < arr.length; i++) {
-        str += arr[i]
-        if (i !== arr.length - 1) {
-            str += char;
-        }
+        if (elem.length == 0) {
+            str += arr[i];
+        } else {
+            str += arr[i] + elem
+        } 
     }
-    return arr;
+    str = str.slice(0, str.length - elem.length)
+    return str
 }
