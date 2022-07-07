@@ -68,3 +68,5 @@ function round(num) {
     if (trunc(num) - num >= 0.5) return floor(num)
     return ceil(num)
 }
+
+//console.log(trunc(-56.78))
