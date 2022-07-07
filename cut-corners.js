@@ -1,29 +1,23 @@
 function trunc(num) {
-    return (num - num % 1)
+    let i = (num * 1) ^ num.length;
+    return i;
 }
 
 function floor(num) {
-    if (num >= 0) {
-        return num - (num % 1);
-    }
-    return num - 1 - (num % 1)
+    if (num > 0 || num === trunc(num)) return trunc(num)
+    else return trunc(num) -1
 }
 
 function ceil(num) {
-    if (num > 0) {
-        return num + 1 - (num % 1);
-    }
-    return num - (num % 1)
+    if (num > 0 && num !== trunc(num)) return trunc(num) + 1
+    else return trunc(num)
 }
 
 function round(num) {
-    let sign = 1;
-    if (num < 0) {
-        num *= -1;
-        sign = -1;
+    if (num > 0) {
+        if (num - trunc(num) >= 0.5) return ceil(num)
+        return floor(num)
     }
-    if (num % 1 >= 0.5) {
-        return sign * ceil(num);
-    }
-    return sign * floor(num);
+    if (trunc(num) - num >= 0.5) return floor(num)
+    return ceil(num)
 }
