@@ -29,17 +29,22 @@ function modulo(a, b) {
 }
 
 function round(num) {
-    let sign = 1
-    if (num < 0) {
-        num *= -1;
-        sign = -1;
+    let temp = 0 + num
+    let res = 0
+    num = Math.abs(num)
+    if (temp < 0) {
+        num -= 0.01
     }
-    if (modulo(num, 1) >= 0.5) {
-        return sign * ceil(num);
-    } 
-    return sign * floor(num);
+    if (modulo(num, 1) < 0.5) {
+        res = num - modulo(num, 1)
+    } else {
+        res = num + 1 - modulo(num, 1)
+    }
+    if (temp < 0) {
+        res *= -1
+    }
+    return res
 }
-
 
 function ceil(num) {
     if (num > 0) {
