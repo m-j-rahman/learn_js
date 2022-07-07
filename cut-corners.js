@@ -58,7 +58,7 @@ function truncish(num) {
 
 function trunc(num) {
     if (num > 0xfffffffff) {
-        n -= 0xfffffffff;
+        num -= 0xfffffffff;
         return truncish(num) + 0xfffffffff;
     } else {
         return truncish(num);
