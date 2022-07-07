@@ -46,7 +46,6 @@ function modulo(a, b) {
     return a - multiply(divide(a, b), b);
 }
 
-
 function truncish(num) {
     let m = modulo(num, 1);
     if (m !== 0) {
@@ -64,11 +63,11 @@ function trunc(num) {
         return truncish(num);
     }
 }
+
 function floor(num) {
     if (num > 0 || num === trunc(num)) return trunc(num)
     else return trunc(num) -1
 }
-
 
 function ceil(num) {
     if (num > 0 && num !== trunc(num)) return trunc(num) + 1 
