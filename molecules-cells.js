@@ -1,6 +1,6 @@
 function RNA(DNA) {
     let result = ""
-    for (let i = 0; i < DNA.length; i++) {
+    for (let i = 0; i <= DNA.length; i++) {
         if (RNA[i] === "G") {
             result += "C"
         }
@@ -19,7 +19,7 @@ function RNA(DNA) {
 
 function DNA(RNA) {
     let result = ""
-    for (let i = 0; i < RNA.length; i++) {
+    for (let i = 0; i <= RNA.length; i++) {
         if (RNA[i] === "C") {
             result += "G"
         }
