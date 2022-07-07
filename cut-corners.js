@@ -1,3 +1,9 @@
+function sign(num) {
+    if (num > 0) return num;
+    if (num < 0) return -num;
+    else return 0;
+}
+
 function modulo(a, b) {
     let A = a;
     let B = b;
@@ -22,33 +28,29 @@ function modulo(a, b) {
     }
 }
 
-function sign(num) {
-    if (num > 0) return num;
-    if (num < 0) return -num;
-    else return 0;
+function round(num) {
+    if (modulo(num, 1) >= 0.5) {
+        return ceil(num);
+    } 
+    return floor(num);
 }
 
-function trunc(num) {
-    return num - modulo(num, 1)
+
+function ceil(num) {
+    if (num > 0) {
+        return num + 1 - modulo(num, 1);
+    } 
+    return num - 1 - modulo(num, 1);
 }
 
 function floor(num) {
-    if (num > 0 || num === trunc(num)) return trunc(num)
-    else return trunc(num) -1
+    if (num >= 0) {
+        return num - 1 - modulo(num, 1);
+    } 
+    return num - 1 - modulo(num, 1);
 }
 
-function ceil(num) {
-    if (num > 0 && num !== trunc(num)) return trunc(num) + 1
-    else return trunc(num)
-}
 
-function round(num) {
-    if (num > 0) {
-        if (num - trunc(num) >= 0.5) return ceil(num)
-        return floor(num)
-    }
-    if (trunc(num) - num >= 0.5) return floor(num)
-    return ceil(num)
+function trunc(num) {
+    return num - modulo(num, 1);
 }
-
-console.log(trunc(-56.78))
