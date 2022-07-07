@@ -18,7 +18,7 @@ function join(arr, elem = ',') {
     for (const index in arr) {
         res += arr[index]
         if (index < arr.length - 1) {
-            res += sep
+            res += elem
         }
     }
     return res
