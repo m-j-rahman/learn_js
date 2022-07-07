@@ -29,10 +29,15 @@ function modulo(a, b) {
 }
 
 function round(num) {
+    let sign = 1
+    if (num < 0) {
+        num *= -1;
+        sign = -1;
+    }
     if (modulo(num, 1) >= 0.5) {
-        return ceil(num);
+        return sign * ceil(num);
     } 
-    return floor(num);
+    return sign * floor(num);
 }
 
 
@@ -54,3 +59,6 @@ function floor(num) {
 function trunc(num) {
     return num - modulo(num, 1);
 }
+
+
+console.log(round(54))
