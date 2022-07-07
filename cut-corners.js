@@ -35,10 +35,10 @@ function round(num) {
     if (temp < 0) {
         num -= 0.01
     }
-    if (modulo(num, 1) < 0.5) {
-        res = num - modulo(num, 1)
+    if ((modulo(num, 1)) < 0.5) {
+        res = num - (modulo(num, 1))
     } else {
-        res = num + 1 - modulo(num, 1)
+        res = num + 1 - (modulo(num, 1))
     }
     if (temp < 0) {
         res *= -1
@@ -48,22 +48,19 @@ function round(num) {
 
 function ceil(num) {
     if (num > 0) {
-        return num + 1 - modulo(num, 1);
+        return num + 1 - (modulo(num, 1));
     } 
-    return num - 1 - modulo(num, 1);
+    return num - 1 - (modulo(num, 1));
 }
 
 function floor(num) {
     if (num >= 0) {
-        return num - 1 - modulo(num, 1);
+        return num - 1 - (modulo(num, 1));
     } 
-    return num - 1 - modulo(num, 1);
+    return num - 1 - (modulo(num, 1));
 }
 
 
 function trunc(num) {
-    return num - modulo(num, 1);
+    return num - (modulo(num, 1));
 }
-
-
-console.log(round(54))
