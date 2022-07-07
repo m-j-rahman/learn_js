@@ -28,39 +28,39 @@ function modulo(a, b) {
     }
 }
 
-function round(num) {
-    let temp = 0 + num
-    let res = 0
-    num = Math.abs(num)
-    if (temp < 0) {
-        num -= 0.01
-    }
-    if ((modulo(num, 1)) < 0.5) {
-        res = num - (modulo(num, 1))
+function truncish(num) {
+    let m = modulo(num, 1);
+    if (m !== 0) {
+        return num - m;
     } else {
-        res = num + 1 - (modulo(num, 1))
+        return num;
     }
-    if (temp < 0) {
-        res *= -1
-    }
-    return res
 }
-
-function ceil(num) {
-    if (num > 0) {
-        return num + 1 - (modulo(num, 1));
-    } 
-    return num - 1 - (modulo(num, 1));
-}
-
-function floor(num) {
-    if (num >= 0) {
-        return num - 1 - (modulo(num, 1));
-    } 
-    return num - 1 - (modulo(num, 1));
-}
-
 
 function trunc(num) {
-    return num - (modulo(num, 1));
+    if (num > 0xfffffffff) {
+        n -= 0xfffffffff;
+        return truncish(num) + 0xfffffffff;
+    } else {
+        return truncish(num);
+    }
+}
+function floor(num) {
+    if (num > 0 || num === trunc(num)) return trunc(num)
+    else return trunc(num) -1
+}
+
+
+function ceil(num) {
+    if (num > 0 && num !== trunc(num)) return trunc(num) + 1 
+    else return trunc(num)
+}
+
+function round(num) {
+    if (num > 0) {
+        if (num - trunc(num) >= 0.5) return ceil(num)
+        return floor(num)
+    }
+    if (trunc(num) - num >= 0.5) return floor(num)
+    return ceil(num)
 }
