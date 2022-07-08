@@ -1,16 +1,16 @@
 function RNA(DNA) {
     let result = ""
-    for (let i = 0; i <= DNA.length-1; i++) {
-        if (RNA[i] === "G") {
+    for (let i = 0; i < DNA.length; i++) {
+        if (DNA[i] === "G") {
             result += "C"
         }
-        else if (RNA[i] === "C") {
+        else if (DNA[i] === "C") {
             result += "G"
         }
-        else if (RNA[i] === "T") {
+        else if (DNA[i] === "T") {
             result += "A"
         }
-        else if (RNA[i] === "A") {
+        else if (DNA[i] === "A") {
             result += "U"
         }
     }
@@ -19,7 +19,7 @@ function RNA(DNA) {
 
 function DNA(RNA) {
     let result = ""
-    for (let i = 0; i <= RNA.length-1; i++) {
+    for (let i = 0; i < RNA.length; i++) {
         if (RNA[i] === "C") {
             result += "G"
         }
