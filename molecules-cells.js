@@ -4,13 +4,13 @@ function RNA(DNA) {
         if (RNA[i] === "G") {
             result += "C"
         }
-        if (RNA[i] === "C") {
+        else if (RNA[i] === "C") {
             result += "G"
         }
-        if (RNA[i] === "T") {
+        else if (RNA[i] === "T") {
             result += "A"
         }
-        if (RNA[i] === "A") {
+        else if (RNA[i] === "A") {
             result += "U"
         }
     }
@@ -23,13 +23,13 @@ function DNA(RNA) {
         if (RNA[i] === "C") {
             result += "G"
         }
-        if (RNA[i] === "G") {
+        else if (RNA[i] === "G") {
             result += "C"
         }
-        if (RNA[i] === "A") {
+        else if (RNA[i] === "A") {
             result += "T"
         }
-        if (RNA[i] === "U") {
+        else if (RNA[i] === "U") {
             result += "A"
         }
     }
