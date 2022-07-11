@@ -20,10 +20,10 @@ function isBefore (date1, date2) {
 
 function isFuture(date) {
     if (!isValid(date)) return false
-    return date > Date.now
+    return date > Date.now()
 }
 
 function isPast(date) {
     if (!isValid(date)) return false
-    return date < Date.now
+    return date < Date.now()
 }
