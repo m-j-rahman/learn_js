@@ -1,5 +1,5 @@
 function isValid(date) {
-    if (isNaN(date) || date === 0) {
+    if (isNaN(date)|| date == 0) {
         return false
     } else {
         return true
