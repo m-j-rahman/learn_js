@@ -27,11 +27,11 @@ function firstDayWeek(week, year) {
                 day = "0" + day
             }
             let month = date.getMonth() + 1
-                if (month < 10) {
-                    month = "0" + month
-                }
-                return day + "-" + month + "-" + year
+            if (month < 10) {
+                month = "0" + month
             }
+            return day + "-" + month + "-" + year
         }
-        return 0
     }
+    return 0
+}
