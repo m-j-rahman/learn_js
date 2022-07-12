@@ -12,7 +12,7 @@ function firstDayWeek(week, year) {
     if (typeof s !== "string" && year.length != 4) {
         return undefined
     }
-    let date = new Date("01-01-" + year)
+    let date = new Date(year + "-01-01")
     if (week == 1) {
         return "01-01-" + year
     }
