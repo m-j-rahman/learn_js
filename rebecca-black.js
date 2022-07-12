@@ -1,18 +1,18 @@
-function isFriday(Date) {
-    return Date.getDay() === 5
+function isFriday(date) {
+    return date.getDay() === 5
 }
 
-function isWeekend(Date) {
-    return Date.getDay() === 6 ^ Date.getDay() === 0
+function isWeekend(date) {
+    return date.getDay() === 6 ^ date.getDay() === 0
 }
 
-function isLeapYear(Date) {
-    Date.setDate(Date.getDate() + 28)
-    return Date.getMonth() === 1
+function isLeapYear(date) {
+    date.setDate(date.getDate() + 28)
+    return date.getMonth() === 1
 }
 
-function isLastDayOfMonth(Date) {
-    let currentMonth = Date.getMonth()
-    Date.setDate(Date.getDate() + 1)
-    return Date.getMonth() !== currentMonth
+function isLastDayOfMonth(date) {
+    let currentMonth = date.getMonth()
+    date.setDate(date.getDate() + 1)
+    return date.getMonth() !== currentMonth
 }
