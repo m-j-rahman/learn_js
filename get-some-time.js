@@ -33,4 +33,5 @@ function firstDayWeek(week, year) {
                 return day + "-" + month + "-" + year
             }
         }
+        return 0
     }
