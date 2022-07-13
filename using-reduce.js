@@ -1,3 +1,4 @@
-function adder(arr, sum = 0) {
-    return arr.reduce((sum, elem) => sum + elem, sum)
+function adder(arr, start = 0) {
+    return arr.reduce(((prev, curr) => prev + curr), (start))
 }
+
