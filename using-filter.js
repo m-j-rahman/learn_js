@@ -21,8 +21,8 @@ function filter1DistinctVowel(arr) {
 function multiFilter(arr) {
     return arr.filter((obj) =>
         obj.capital.length > 7 &&
-        !obj.name.match(/^[aeiouAEIOU]/) &&
-        obj.tag.match(/[aeiouAEIOU]/g) && 
+        !obj.name.match(/^[aeiou]/i) &&
+        obj.tag.match(/[aeiou]/gi) && 
         obj.region !== "South"
     )
 }
