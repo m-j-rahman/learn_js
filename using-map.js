@@ -23,5 +23,5 @@ function trimTemp(arr) {
 
 function tempForecasts(arr) {
     arr = trimTemp(arr)
-    return arr.map((elem) => fahrenheitToCelsius([trimTemp([elem])[0].temperature]) + "elsius in " + upperCasingStates([e.city, e.state]).join(", "))
+    return arr.map((elem) => fahrenheitToCelsius([trimTemp([elem])[0].temperature]) + "elsius in " + upperCasingStates([elem.city, elem.state]).join(", "))
 }
