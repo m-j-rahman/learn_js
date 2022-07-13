@@ -22,7 +22,7 @@ function multiFilter(arr) {
     return arr.filter((obj) =>
         obj.capital.length > 7 &&
         !obj.name.match(/^[aeiouAEIOU]/) &&
-        obj.tag.match(/^[aeiouAEIOU]/g) && 
+        obj.tag.match(/[aeiouAEIOU]/g) && 
         obj.region !== "South"
     )
 }
