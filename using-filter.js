@@ -19,10 +19,10 @@ function filter1DistinctVowel(arr) {
 }
 
 function multiFilter(arr) {
-    return arr.filter((obj) => {
+    return arr.filter((obj) =>
         obj.capital.length > 7 &&
-        !obj.name.match(/^[aeiou]/i) &&
-        obj.tag.match(/^[aeiou]/gi) && 
+        !obj.name.match(/^[aeiouAEIOU]/) &&
+        obj.tag.match(/^[aeiouAEIOU]/g) && 
         obj.region !== "South"
-    });
+    )
 }
