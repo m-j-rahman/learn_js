@@ -19,13 +19,5 @@ function reject(arr, func) {
 }
 
 function partition(arr, func) {
-    let res = [[],[]]
-    for (let i = 0; i < arr.length; i++) {
-        if (func(arr[i], i, arr) == true) {
-            res[0].push(arr[i])
-        } else {
-            res[1].push(arr[i])
-        }
-    }
-    return res
+    return [filter(arr, func), reject(arr, func)]
 }
