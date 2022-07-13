@@ -1,13 +1,13 @@
 function filterShortStateName(arr) {
-    return arr.filter((str) => str.length < 7)
+    return arr.filter((str) => str.length < 7);
 }
 
 function filterStartVowel(arr) {
-    return arr.filter((str) => str.match(/^[aeiou]/i))
+    return arr.filter((str) => str.match(/^[aeiou]/i));
 }
 
 function filter5Vowels(arr) {
-    return arr.filter((str) => str.match(/^[aeiou]/gi).length >= 5)
+    return arr.filter((str) => str.match(/^[aeiou]/gi).length >= 5);
 }
 
 function filter1DistinctVowel(arr) {
@@ -15,7 +15,7 @@ function filter1DistinctVowel(arr) {
         let vowels = filterStartVowel(str.toLowerCase().split(""))
         vowels.sort()
         return vowels[0] === vowels[vowels.length - 1]
-    })
+    });
 }
 
 function multiFilter(arr) {
@@ -24,5 +24,5 @@ function multiFilter(arr) {
         !obj.name.match(/^[aeiou]/i) &&
         obj.tag.match(/^[aeiou]/gi) && 
         obj.region !== "South"
-    })
+    });
 }
