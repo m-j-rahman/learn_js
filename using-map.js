@@ -5,7 +5,7 @@ function citiesOnly(arr) {
 function upperCasingStates(arr) {
     return arr.map(state => {
         return state.split(" ").map(word => {
-            return word.char(0).toUpperCase() + word.slice(1)
+            return word.charAt(0).toUpperCase() + word.slice(1)
         }).join(" ")
     })
 }
