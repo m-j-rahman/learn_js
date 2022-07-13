@@ -7,7 +7,7 @@ function filterStartVowel(arr) {
 }
 
 function filter5Vowels(arr) {
-    return arr.filter((str) => str.match(/^[a|e|i|o|u]/gi).length >= 5);
+    return arr.filter((str) => filterStartVowel(str.split("")).length >= 5);
 }
 
 function filter1DistinctVowel(arr) {
