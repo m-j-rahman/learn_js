@@ -7,7 +7,7 @@ function filterStartVowel(arr) {
 }
 
 function filter5Vowels(arr) {
-    return arr.filter((str) => str.match(/^[aeiou]/ig).length >= 5)
+    return arr.filter((str) => str.match(/^[aeiou]/gi).length >= 5)
 }
 
 function filter1DistinctVowel(arr) {
@@ -22,7 +22,7 @@ function multiFilter(arr) {
     return arr.filter((obj) => {
         obj.capital.length > 7 &&
         !obj.name.match(/^[aeiou]/i) &&
-        obj.tag.match(/^[aeiou]/ig) && 
+        obj.tag.match(/^[aeiou]/gi) && 
         obj.region !== "South"
     })
 }
