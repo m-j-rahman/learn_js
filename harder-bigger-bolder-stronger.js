@@ -15,8 +15,7 @@ export function generateLetters() {
             section += partition
             if (weight === 300) {
                 weight += 100
-            }
-            if (weight === 400) {
+            } else {
                 weight += 200
             }
         }
