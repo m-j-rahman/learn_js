@@ -17,5 +17,7 @@ export function getActive() {
 }
 
 export function getBonannoPisano() {
-    return [document.getElementById('BonannoPisano'), getActive[0]]
+    let bon = document.getElementById('BonannoPisano')
+    let nonBon = Array.from(document.querySelectorAll('a:not(#BonannoPisano)'))
+    return [bon, nonBon]
 }
