@@ -16,9 +16,12 @@ function mapKeys(item, func) {
     return result
 }
 
-function reduceKeys(item, func, start = 0) {
+function reduceKeys(item, func, start = undefined) {
     let accumulator = start
-    let count = 0
+    if (start === undefined ) {
+        count = 0
+    }
+    let count = 1
     for (let value of Object.entries(item)){
         if(count == 0) {
             accumulator = value[0]
