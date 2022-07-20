@@ -47,7 +47,7 @@ function cartTotal(item) {
         let result = {};
         for (let [key, val] of Object.entries(nutritionDB[k])) {
             result[key] = parseFloat(((val * v) / 100).toFixed(3));
-            return [k, result];
         }
+        return [k, result];
     });
 };
