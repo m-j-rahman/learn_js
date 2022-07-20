@@ -1,21 +1,35 @@
-function filterValues(item, func) {
-    const result = {}
-    Object.keys(item).forEach(key => {
-        if (func(item[key])) {
-            result[key] = item[key]
+function filterKeys(item, func) {
+    let result = {}
+    for (let value of Object.entries(item)){
+        if(func(value[0])) { 
+            result[value[0]] = value[1]
         }
-    })
+    }
     return result
 }
 
-function mapValues(item, func) {
-    const result = {}
-    Object.keys(item).forEach(key => {
-        result[key] = func(item[key])
-    })
+function mapKeys(item, func) {
+    let result = {}
+    for (let value of Object.entries(item)){
+            result[func(value[0])] = value[1]
+    }
     return result
 }
 
-function reduceValues(item, func, result = 0) {
-    return Object.keys(item).reduce((prev, val) => prev + item[val], result)
+function reduceKeys(item, func, start = undefined) {
+    let accumulator = start
+    let count = 1
+    if (start === undefined ) {
+        count = 0
+    }
+    
+    for (let value of Object.entries(item)){
+        if(count == 0) {
+            accumulator = value[0]
+        } else { 
+            accumulator = func(accumulator,value[0])
+        }
+        count++
+    }    
+    return accumulator
 }
