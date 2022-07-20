@@ -22,17 +22,17 @@ function filterCurry(func) {
     }
 }
 
-function reduceScore(personnel, init = 0) {
-    return reduceCurry((acc, [, values]) => values.isForceUser ? acc + values.pilotingScore + values.shootingScore : acc)(personnel, init)
+function reduceScore(personnel, start) {
+    let filter = filterCurry(([k, v]) => v.isForceUser === true) (personnel)
+    return (reduceCurry((acc,[k, v]) => (acc += v.pilotingScore+v.shootingScore)) (filter,start) )
 }
-
 function filterForce(personnel) {
-    return filterCurry(([, values]) => values.isForceUser && values.shootingScore >= 80)(personnel)
+    let filter = filterCurry(([k, v]) => v.isForceUser === true) (personnel)
+    return (filterCurry(([k, v]) => v.shootingScore >= 80) (filter))
 }
-
 function mapAverage(personnel) {
-    return mapCurry(([name, values]) => {
-        values.averageScore = (values.pilotingScore + values.shootingScore) / 2
-        return [name, values]
-    })(personnel)
+    for (let entries of Object.entries(personnel)) {
+        personnel[entries[0]]["averageScore"] = (entries[1].pilotingScore + entries[1].shootingScore) / 2
+    }
+    return personnel
 }
